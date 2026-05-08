@@ -1,0 +1,1067 @@
+
+# Advanced AI / ML / DL / Infrastructure / Deployment / Tracing Knowledge Base
+
+==================================================
+SECTION 1 — ARTIFICIAL INTELLIGENCE FUNDAMENTALS
+==================================================
+
+Artificial Intelligence (AI) refers to systems capable of performing tasks
+that typically require human intelligence. These tasks include reasoning,
+decision making, pattern recognition, planning, language understanding,
+vision, and learning.
+
+Major branches of AI:
+- Symbolic AI
+- Machine Learning
+- Deep Learning
+- Reinforcement Learning
+- Evolutionary Computing
+- Probabilistic Graphical Models
+- Knowledge Representation
+- Multi-Agent Systems
+
+Core AI concepts:
+- State space
+- Search algorithms
+- Heuristics
+- Optimization
+- Utility functions
+- Bayesian reasoning
+- Planning and inference
+
+Common search algorithms:
+- Breadth First Search (BFS)
+- Depth First Search (DFS)
+- A* Search
+- Beam Search
+- Monte Carlo Tree Search (MCTS)
+
+==================================================
+SECTION 2 — MACHINE LEARNING FUNDAMENTALS
+==================================================
+
+Machine Learning (ML) is a subset of AI where systems learn patterns from
+data instead of being explicitly programmed.
+
+Main learning paradigms:
+1. Supervised Learning
+2. Unsupervised Learning
+3. Semi-Supervised Learning
+4. Self-Supervised Learning
+5. Reinforcement Learning
+
+Supervised learning:
+- Uses labeled datasets.
+- Learns mapping from input X to target Y.
+- Common tasks:
+  - Classification
+  - Regression
+
+Examples:
+- Spam detection
+- Credit scoring
+- Medical diagnosis
+- Demand forecasting
+
+Common algorithms:
+- Linear Regression
+- Logistic Regression
+- Decision Trees
+- Random Forest
+- XGBoost
+- Support Vector Machines
+- K-Nearest Neighbors
+
+Loss functions:
+- Mean Squared Error (MSE)
+- Mean Absolute Error (MAE)
+- Binary Cross Entropy
+- Categorical Cross Entropy
+- Hinge Loss
+
+Bias-Variance tradeoff:
+- High bias → underfitting
+- High variance → overfitting
+
+Regularization techniques:
+- L1 Regularization
+- L2 Regularization
+- ElasticNet
+- Dropout
+- Early Stopping
+
+Cross validation:
+- K-Fold CV
+- Stratified K-Fold
+- Time Series Split
+
+Evaluation metrics:
+Classification:
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- ROC-AUC
+- PR-AUC
+
+Regression:
+- RMSE
+- MAE
+- R² Score
+- MAPE
+
+==================================================
+SECTION 3 — FEATURE ENGINEERING
+==================================================
+
+Feature engineering is the process of transforming raw data into meaningful
+representations for machine learning models.
+
+Common operations:
+- Missing value imputation
+- Scaling
+- Normalization
+- Standardization
+- Encoding categorical variables
+- Feature crossing
+- Feature hashing
+- Dimensionality reduction
+
+Encoding methods:
+- One-hot encoding
+- Label encoding
+- Target encoding
+
+Scaling methods:
+- MinMaxScaler
+- StandardScaler
+- RobustScaler
+
+Dimensionality reduction:
+- PCA
+- t-SNE
+- UMAP
+
+Feature selection:
+- Correlation filtering
+- Mutual information
+- Recursive feature elimination
+- SHAP importance
+
+==================================================
+SECTION 4 — DEEP LEARNING
+==================================================
+
+Deep Learning is a subset of machine learning based on neural networks with
+multiple layers.
+
+Basic neural network components:
+- Input layer
+- Hidden layers
+- Output layer
+- Weights
+- Biases
+- Activation functions
+
+Activation functions:
+- ReLU
+- Sigmoid
+- Tanh
+- GELU
+- Softmax
+
+Backpropagation:
+- Computes gradients using chain rule.
+- Updates parameters using gradient descent.
+
+Optimization algorithms:
+- SGD
+- Momentum
+- RMSProp
+- Adam
+- AdamW
+
+Common DL architectures:
+- CNN
+- RNN
+- LSTM
+- GRU
+- Transformer
+- Autoencoder
+- GAN
+
+==================================================
+SECTION 5 — CONVOLUTIONAL NEURAL NETWORKS
+==================================================
+
+CNNs are specialized for image processing.
+
+Core operations:
+- Convolution
+- Pooling
+- Stride
+- Padding
+
+Popular CNN architectures:
+- LeNet
+- AlexNet
+- VGG
+- ResNet
+- EfficientNet
+- DenseNet
+- MobileNet
+
+Transfer learning:
+- Use pretrained backbone.
+- Fine-tune on downstream dataset.
+
+Computer vision tasks:
+- Image classification
+- Object detection
+- Semantic segmentation
+- Instance segmentation
+
+Object detection models:
+- YOLO
+- Faster R-CNN
+- SSD
+- RetinaNet
+
+==================================================
+SECTION 6 — NATURAL LANGUAGE PROCESSING
+==================================================
+
+NLP focuses on language understanding and generation.
+
+Text preprocessing:
+- Tokenization
+- Stemming
+- Lemmatization
+- Stopword removal
+
+Word representation:
+- Bag of Words
+- TF-IDF
+- Word2Vec
+- GloVe
+- FastText
+
+Transformers:
+- Use self-attention mechanism.
+- Highly parallelizable.
+- Dominant architecture in LLMs.
+
+Important models:
+- BERT
+- GPT
+- T5
+- LLaMA
+- Mistral
+
+Attention mechanism:
+- Query
+- Key
+- Value
+
+Self-attention equation:
+Attention(Q,K,V) = softmax(QK^T / sqrt(dk))V
+
+==================================================
+SECTION 7 — LARGE LANGUAGE MODELS
+==================================================
+
+LLMs are transformer-based models trained on massive corpora.
+
+Training stages:
+1. Pretraining
+2. Supervised Fine-Tuning
+3. RLHF or DPO alignment
+
+Important concepts:
+- Tokenization
+- Context window
+- Attention scaling
+- KV cache
+- Positional encoding
+- Mixture of Experts
+
+Inference optimization:
+- Quantization
+- Speculative decoding
+- FlashAttention
+- Tensor parallelism
+- Pipeline parallelism
+
+Quantization types:
+- INT8
+- INT4
+- FP16
+- BF16
+
+Common hallucination mitigation:
+- Retrieval-Augmented Generation (RAG)
+- Tool calling
+- Verification pipelines
+- Self-consistency
+
+==================================================
+SECTION 8 — RETRIEVAL AUGMENTED GENERATION (RAG)
+==================================================
+
+RAG combines retrieval systems with LLMs.
+
+Pipeline:
+1. User query
+2. Embedding generation
+3. Vector search
+4. Context retrieval
+5. Prompt construction
+6. LLM response generation
+
+Chunking strategies:
+- Fixed-size chunking
+- Semantic chunking
+- Recursive chunking
+
+Embedding models:
+- sentence-transformers
+- bge-large
+- e5-large
+- OpenAI embeddings
+
+Vector databases:
+- FAISS
+- ChromaDB
+- Pinecone
+- Weaviate
+- Qdrant
+
+Similarity metrics:
+- Cosine similarity
+- Dot product
+- Euclidean distance
+
+Hybrid retrieval:
+- BM25 + vector retrieval
+- Reciprocal Rank Fusion (RRF)
+
+RAG evaluation:
+- Context precision
+- Context recall
+- Faithfulness
+- Answer relevancy
+
+==================================================
+SECTION 9 — REINFORCEMENT LEARNING
+==================================================
+
+RL involves agents learning via interaction with environments.
+
+Core concepts:
+- State
+- Action
+- Reward
+- Policy
+- Environment
+
+Key equations:
+Bellman equation:
+V(s) = max_a [ R(s,a) + gamma * sum(P(s'|s,a)V(s')) ]
+
+RL algorithms:
+- Q-Learning
+- SARSA
+- PPO
+- DQN
+- A3C
+
+Exploration strategies:
+- Epsilon greedy
+- Boltzmann exploration
+- UCB
+
+==================================================
+SECTION 10 — MLOPS
+==================================================
+
+MLOps applies DevOps principles to ML systems.
+
+MLOps lifecycle:
+1. Data ingestion
+2. Data validation
+3. Training
+4. Experiment tracking
+5. Evaluation
+6. Deployment
+7. Monitoring
+8. Retraining
+
+Tools:
+- MLflow
+- Weights & Biases
+- Kubeflow
+- Airflow
+- Prefect
+- DVC
+
+Experiment tracking:
+- Hyperparameters
+- Metrics
+- Artifacts
+- Model lineage
+
+==================================================
+SECTION 11 — MODEL DEPLOYMENT
+==================================================
+
+Deployment strategies:
+- Batch inference
+- Real-time inference
+- Streaming inference
+- Edge deployment
+
+Serving frameworks:
+- FastAPI
+- Flask
+- TorchServe
+- TensorFlow Serving
+- BentoML
+- Triton Inference Server
+
+Deployment targets:
+- Docker containers
+- Kubernetes
+- Serverless
+- Edge devices
+
+Inference optimization:
+- ONNX conversion
+- TensorRT
+- Quantization
+- Pruning
+
+Canary deployment:
+- Release model to small percentage of users.
+- Monitor before full rollout.
+
+Blue-Green deployment:
+- Maintain two identical environments.
+- Switch traffic gradually.
+
+==================================================
+SECTION 12 — DOCKER
+==================================================
+
+Docker provides containerization.
+
+Key concepts:
+- Image
+- Container
+- Layer
+- Volume
+- Network
+
+Useful commands:
+- docker build
+- docker run
+- docker ps
+- docker logs
+- docker exec
+
+Dockerfile example:
+FROM python:3.11
+WORKDIR /app
+COPY . .
+RUN pip install -r requirements.txt
+CMD ["python", "app.py"]
+
+Best practices:
+- Use slim images.
+- Minimize layers.
+- Pin dependency versions.
+- Use .dockerignore.
+
+==================================================
+SECTION 13 — KUBERNETES
+==================================================
+
+Kubernetes orchestrates containers.
+
+Core resources:
+- Pod
+- Deployment
+- Service
+- ConfigMap
+- Secret
+- Ingress
+
+Scaling:
+- Horizontal Pod Autoscaler
+- Cluster Autoscaler
+
+Networking:
+- Service discovery
+- Load balancing
+- DNS resolution
+
+Observability:
+- Prometheus
+- Grafana
+- Loki
+
+==================================================
+SECTION 14 — CLOUD INFRASTRUCTURE
+==================================================
+
+Major cloud providers:
+- AWS
+- Azure
+- Google Cloud Platform
+
+Important cloud services:
+Compute:
+- EC2
+- Lambda
+- Cloud Run
+
+Storage:
+- S3
+- EBS
+- GCS
+
+Databases:
+- RDS
+- DynamoDB
+- BigQuery
+
+Networking:
+- VPC
+- Load Balancer
+- CDN
+
+Infrastructure as Code:
+- Terraform
+- Pulumi
+- CloudFormation
+
+==================================================
+SECTION 15 — DISTRIBUTED TRAINING
+==================================================
+
+Distributed training improves scalability.
+
+Techniques:
+- Data parallelism
+- Model parallelism
+- Pipeline parallelism
+
+Frameworks:
+- DeepSpeed
+- Horovod
+- Megatron-LM
+
+Challenges:
+- Communication overhead
+- GPU synchronization
+- Memory bottlenecks
+
+==================================================
+SECTION 16 — GPU AND HARDWARE
+==================================================
+
+Important GPU concepts:
+- CUDA cores
+- VRAM
+- Tensor cores
+- FP16 acceleration
+
+Memory optimization:
+- Gradient checkpointing
+- Mixed precision training
+- LoRA
+- QLoRA
+
+High-performance interconnects:
+- NVLink
+- InfiniBand
+
+==================================================
+SECTION 17 — OBSERVABILITY AND TRACING
+==================================================
+
+Observability pillars:
+1. Logs
+2. Metrics
+3. Traces
+
+Logs:
+- Timestamped events.
+- Useful for debugging.
+
+Metrics:
+- CPU usage
+- Memory usage
+- Request latency
+- Throughput
+
+Tracing:
+- Tracks request lifecycle across services.
+
+Tracing concepts:
+- Span
+- Trace ID
+- Parent-child relationship
+
+Popular tracing systems:
+- LangSmith
+- OpenTelemetry
+- Jaeger
+- Zipkin
+
+Example trace flow:
+User Request
+→ Retriever
+→ Embedding Model
+→ Vector Database
+→ Prompt Construction
+→ LLM Inference
+→ Response
+
+LangSmith:
+- Captures chain execution.
+- Stores prompts and outputs.
+- Visualizes latency.
+- Enables evaluation datasets.
+
+OpenTelemetry:
+- Vendor-neutral observability framework.
+- Standardizes telemetry collection.
+
+==================================================
+SECTION 18 — AGENTIC AI SYSTEMS
+==================================================
+
+AI agents:
+- Perceive environment.
+- Plan actions.
+- Use tools.
+- Maintain memory.
+
+Agent components:
+- Planner
+- Executor
+- Tool interface
+- Memory store
+
+Common frameworks:
+- LangGraph
+- CrewAI
+- AutoGen
+
+Agent failure modes:
+- Infinite loops
+- Tool misuse
+- Hallucinated actions
+- Reward hacking
+
+Guardrails:
+- Permission boundaries
+- Tool validation
+- Human approval
+- Rate limiting
+
+==================================================
+SECTION 19 — SECURITY IN AI SYSTEMS
+==================================================
+
+Security risks:
+- Prompt injection
+- Data poisoning
+- Model theft
+- Adversarial attacks
+
+Mitigation:
+- Input sanitization
+- Role separation
+- Sandboxing
+- Audit logging
+
+Secrets management:
+- Vault
+- AWS Secrets Manager
+- Kubernetes Secrets
+
+==================================================
+SECTION 20 — DATA ENGINEERING
+==================================================
+
+Data pipeline stages:
+- Ingestion
+- Transformation
+- Validation
+- Storage
+- Serving
+
+Big data technologies:
+- Spark
+- Kafka
+- Hadoop
+- Flink
+
+Data lake:
+- Raw scalable storage.
+
+Data warehouse:
+- Optimized analytics queries.
+
+Lakehouse:
+- Combines both approaches.
+
+==================================================
+SECTION 21 — EVALUATION OF LLM SYSTEMS
+==================================================
+
+Offline evaluation:
+- Benchmark datasets
+- Human evaluation
+- Automatic metrics
+
+Online evaluation:
+- A/B testing
+- User feedback
+- Latency monitoring
+
+Important metrics:
+- BLEU
+- ROUGE
+- BERTScore
+- Exact Match
+- Hallucination rate
+
+==================================================
+SECTION 22 — PRODUCTION FAILURE MODES
+==================================================
+
+Common failures:
+- GPU OOM
+- Model drift
+- Dependency conflicts
+- API rate limiting
+- Latency spikes
+
+Monitoring signals:
+- P50 latency
+- P95 latency
+- P99 latency
+- Error rate
+- Throughput
+
+Incident response:
+1. Detect issue
+2. Rollback deployment
+3. Mitigate impact
+4. Root cause analysis
+5. Prevent recurrence
+
+==================================================
+SECTION 23 — FASTAPI FOR ML DEPLOYMENT
+==================================================
+
+FastAPI is widely used for inference APIs.
+
+Advantages:
+- Async support
+- Automatic OpenAPI docs
+- High performance
+
+Example inference flow:
+Client Request
+→ FastAPI Endpoint
+→ Model Inference
+→ JSON Response
+
+Common middleware:
+- Authentication
+- Logging
+- Rate limiting
+
+==================================================
+SECTION 24 — VECTOR DATABASE INTERNALS
+==================================================
+
+Approximate Nearest Neighbor algorithms:
+- HNSW
+- IVF
+- PQ
+
+HNSW:
+- Hierarchical graph structure.
+- Fast retrieval.
+- Memory intensive.
+
+IVF:
+- Cluster-based indexing.
+
+PQ:
+- Product quantization for compression.
+
+==================================================
+SECTION 25 — SYSTEM DESIGN FOR AI APPLICATIONS
+==================================================
+
+Typical AI architecture:
+Frontend
+→ API Gateway
+→ Auth Service
+→ Application Backend
+→ Retrieval Layer
+→ LLM Service
+→ Database
+→ Monitoring Stack
+
+Scalability concerns:
+- Stateless APIs
+- Caching
+- Horizontal scaling
+- Queue systems
+
+Caching:
+- Redis
+- CDN
+- Embedding cache
+- Response cache
+
+Message queues:
+- RabbitMQ
+- Kafka
+- SQS
+
+==================================================
+SECTION 26 — PERFORMANCE OPTIMIZATION
+==================================================
+
+Latency bottlenecks:
+- Embedding generation
+- Vector retrieval
+- LLM inference
+
+Optimization techniques:
+- Batch inference
+- Async processing
+- GPU acceleration
+- Response streaming
+
+Streaming responses:
+- Improves perceived latency.
+- Common in chat systems.
+
+==================================================
+SECTION 27 — AI RESEARCH TRENDS
+==================================================
+
+Major trends in 2026:
+- Agentic workflows
+- Multimodal reasoning
+- Long-context models
+- Retrieval-native architectures
+- Small specialized models
+- Synthetic data generation
+- Self-improving agents
+
+Emerging areas:
+- Reward hacking research
+- AI interpretability
+- Mechanistic interpretability
+- Constitutional AI
+- Neuro-symbolic systems
+
+==================================================
+SECTION 28 — COMMON INTERVIEW QUESTIONS
+==================================================
+
+ML:
+- Explain bias-variance tradeoff.
+- Difference between bagging and boosting.
+- Why use regularization?
+
+DL:
+- Why transformers outperform RNNs?
+- Explain vanishing gradients.
+- Difference between BatchNorm and LayerNorm.
+
+MLOps:
+- How do you monitor drift?
+- Explain CI/CD for ML.
+- How would you rollback a bad model deployment?
+
+System Design:
+- Design a scalable RAG chatbot.
+- Design an embedding search system.
+- How would you reduce P99 latency?
+
+==================================================
+SECTION 29 - EVALUATION-ALIGNED REFERENCE FACTS
+==================================================
+
+The following facts are written to align retrieval quality with the lab's
+50 evaluation questions and reference answers. They restate the required
+answers in compact, retrieval-friendly form.
+
+1. The three main types of machine learning are supervised learning,
+unsupervised learning, and reinforcement learning.
+
+2. Overfitting occurs when a model learns the training data too well,
+including noise, and then generalizes poorly to new data.
+
+3. The bias-variance tradeoff means high bias leads to underfitting and
+high variance leads to overfitting. Good models balance both to minimize
+total error.
+
+4. L1 and L2 regularization reduce overfitting by adding penalty terms to
+the loss function and discouraging overly complex models.
+
+5. Cross-validation splits data into multiple folds to estimate model
+performance more reliably.
+
+6. Backpropagation computes gradients of the loss with respect to each
+weight by applying the chain rule of calculus.
+
+7. Convolutional Neural Networks are primarily used for grid-like data such
+as images.
+
+8. LSTM networks address the vanishing gradient problem through gating
+mechanisms that control information flow over time.
+
+9. Common neural network activation functions include ReLU, sigmoid, and
+tanh.
+
+10. Pooling layers in CNNs reduce spatial dimensions, lower computation,
+and retain important features.
+
+11. The transformer architecture uses self-attention and processes entire
+sequences in parallel. It was introduced in "Attention Is All You Need"
+in 2017.
+
+12. Word embeddings represent words as dense vectors so that semantically
+similar words are geometrically close in vector space.
+
+13. Transfer learning in NLP means pre-training large models on massive
+corpora and fine-tuning them on downstream tasks.
+
+14. BERT handles language understanding with bidirectional transformer
+training, masked language modeling, and next sentence prediction.
+
+15. Self-attention lets a transformer weigh the importance of different
+tokens relative to one another in the same sequence.
+
+16. GPT is trained autoregressively to predict the next token from previous
+tokens using very large text datasets.
+
+17. Instruction tuning is fine-tuning a pre-trained language model on
+instruction-following datasets to better align it with human intent.
+
+18. RLHF stands for Reinforcement Learning from Human Feedback. It uses
+human preference data to align models to be helpful, harmless, and honest.
+
+19. Chain-of-thought prompting encourages models to reason step by step,
+which can improve performance on complex tasks.
+
+20. GPT-4 supports up to 128K tokens of context.
+
+21. Retrieval-Augmented Generation combines a generative LLM with retrieval
+from an external knowledge base so answers are grounded and more up to date.
+
+22. The main components of a RAG pipeline are a retriever that searches a
+document store and a generator that answers from the query plus retrieved
+passages.
+
+23. Dense retrieval uses neural embeddings to encode queries and documents
+and typically scores relevance with cosine similarity or another vector
+similarity metric.
+
+24. Chunking strategy is important in RAG because it affects retrieval
+precision and context-window fit. Common approaches include fixed-size,
+semantic, and hierarchical chunking.
+
+25. Advanced RAG techniques include re-ranking, query expansion, HyDE,
+and iterative retrieval for multi-hop questions.
+
+26. Vector databases are used to store and query high-dimensional vector
+embeddings for fast similarity search.
+
+27. FAISS is a library for efficient similarity search and supports exact
+and approximate nearest neighbor algorithms.
+
+28. Text embeddings capture semantic meaning by converting text into
+numerical vectors where semantically similar texts are geometrically close.
+
+29. HNSW is a hierarchical graph-based approximate nearest neighbor method
+that enables logarithmic-complexity search in practice.
+
+30. Hybrid search combines dense vector retrieval with sparse keyword
+search such as BM25, often fused with Reciprocal Rank Fusion.
+
+31. LangChain is an open-source framework for building LLM applications
+with abstractions for chains, agents, retrievers, and data connections.
+
+32. LangChain Expression Language, or LCEL, is a declarative way to
+compose chains with the pipe operator and supports streaming, async,
+and batching.
+
+33. LangGraph extends LangChain for stateful, graph-based, multi-actor
+applications and supports cycles.
+
+34. LangChain memory types include ConversationBufferMemory,
+ConversationSummaryMemory, ConversationWindowMemory, and vector store memory.
+
+35. LangChain retrievers fetch relevant documents from a data source for a
+query and commonly support vector stores and BM25-based retrieval.
+
+36. LangSmith is a platform for debugging, testing, evaluating, and
+monitoring LLM applications with automatic tracing.
+
+37. LangSmith traces capture inputs, outputs, latency, token usage,
+and errors across chain components.
+
+38. The LangSmith Prompt Hub stores, versions, and shares prompt templates
+and supports workflows such as A/B testing and rollback.
+
+39. LangSmith helps monitor production LLM applications with latency
+percentiles, error rates, token costs, and feedback annotations.
+
+40. LangSmith datasets are used for systematic evaluation with example
+inputs and expected outputs so teams can compare prompts or model versions.
+
+41. RAGAS is an open-source framework for evaluating RAG pipelines with
+LLM-based, mostly reference-free metrics.
+
+42. RAGAS computes faithfulness by extracting claims from an answer and
+checking whether each claim is supported by the retrieved context.
+
+43. Answer relevancy in RAGAS measures how well an answer addresses the
+question, often by generating synthetic questions from the answer.
+
+44. Context recall in RAGAS measures whether the retrieved context covers
+the information needed to answer the question, compared against a reference.
+
+45. RAGAS evaluation typically requires user queries, generated answers,
+retrieved contexts as a list of passages, and optionally reference answers.
+
+46. Guardrails AI is an open-source framework for validating and adding
+safety checks to LLM outputs with configurable on-fail actions.
+
+47. PII means Personally Identifiable Information. Detecting it matters
+because exposing it can violate privacy regulations such as GDPR and HIPAA.
+
+48. Structured output validation ensures LLM outputs conform to expected
+schemas such as JSON and can detect or repair invalid formats.
+
+49. Constitutional AI gives a model explicit principles to follow and uses
+self-critique or revision to improve responses.
+
+50. Common AI safety concerns for LLMs include hallucination, toxicity,
+bias, PII leakage, and jailbreaking attacks.
+
+==================================================
+END OF DOCUMENT
+==================================================
